@@ -1,8 +1,12 @@
 import express from "express";
-import { getCareers } from "../controllers/career.controller";
+import {
+  getCareers,
+  getSingleCareer,
+} from "../controllers/career.controller";
 
 const router = express.Router();
 
 router.get("/", getCareers);
+router.get("/:id", getSingleCareer);
 
 export default router;
