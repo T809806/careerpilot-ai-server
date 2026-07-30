@@ -6,7 +6,7 @@ This is the backend API for CareerPilot AI. It provides secure authentication, c
 
 ## 🌐 Server URL
 
-`https://your-server-link.onrender.com`
+`https://careerpilot-ai-server-99t0.onrender.com`
 
 ---
 
