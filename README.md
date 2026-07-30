@@ -92,12 +92,12 @@ Create a `.env` file.
 ```env
 PORT=5000
 
-DB_USER=your_db_user
-DB_PASS=your_db_password
+DB_USER=my_db_user
+DB_PASS=my_db_password
 
-JWT_SECRET=your_secret_key
+JWT_SECRET=my_secret_key
 
-CLIENT_URL=http://localhost:5173
+CLIENT_URL=https://careerpilot-ai-client-five.vercel.app
 ```
 
 ---
