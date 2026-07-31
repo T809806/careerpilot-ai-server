@@ -7,14 +7,16 @@ export const verifyToken = (
   next: NextFunction
 ) => {
 
-    const token = req.cookies?.token;
-
-
-  console.log("=== VERIFY TOKEN ===");
+  console.log("========== VERIFY TOKEN ==========");
   console.log("Cookies:", req.cookies);
+
+  const token = req.cookies?.token;
+
   console.log("Token:", token);
 
   if (!token) {
+    console.log("❌ Token Missing");
+
     return res.status(401).send({
       success: false,
       message: "Unauthorized access",
@@ -24,15 +26,20 @@ export const verifyToken = (
   jwt.verify(
     token,
     process.env.JWT_SECRET as string,
-    (error: any, decoded: any) => {
+    (err: any, decoded: any) => {
 
-      if (error) {
+      if (err) {
+        console.log("❌ Invalid Token");
+
         return res.status(401).send({
           success: false,
-          message: "Invalid token",
+          message: "Invalid Token",
         });
       }
- req.user = decoded;
+
+      console.log("✅ Decoded:", decoded);
+
+      req.user = decoded;
 
       next();
     }
