@@ -6,7 +6,10 @@ export const applyCareer = async (
   res: Response
 ) => {
   try {
-    const application = req.body;
+    const application = {
+  ...req.body,
+  email: req.user?.email,
+};
 
     const collection = client
       .db("careerpilot")

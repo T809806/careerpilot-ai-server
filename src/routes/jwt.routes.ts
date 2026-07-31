@@ -3,8 +3,7 @@ import jwt from "jsonwebtoken";
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
-  
+router.post("/", (req, res) => {
   const user = req.body;
 
   const token = jwt.sign(
@@ -15,11 +14,13 @@ router.post("/", async (req, res) => {
     }
   );
 
+  const isProduction = process.env.NODE_ENV === "production";
+
   res
     .cookie("token", token, {
       httpOnly: true,
-      secure: false, 
-      sameSite: "lax",
+      secure: isProduction,
+      sameSite: isProduction ? "none" : "lax",
     })
     .send({
       success: true,
@@ -28,11 +29,13 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
+  const isProduction = process.env.NODE_ENV === "production";
+
   res
     .clearCookie("token", {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: isProduction,
+      sameSite: isProduction ? "none" : "lax",
     })
     .send({
       success: true,
