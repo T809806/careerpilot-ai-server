@@ -2,11 +2,11 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-import careerRoutes from "./routes/career.routes";
-import userRoutes from "./routes/user.routes";
-import jwtRoutes from "./routes/jwt.routes";
-import applicationRoutes from "./routes/application.routes";
-import aiRoutes from "./routes/ai.routes";
+import careerRoutes from "./routes/career.routes.js";
+import userRoutes from "./routes/user.routes.js";
+import jwtRoutes from "./routes/jwt.routes.js";
+import applicationRoutes from "./routes/application.routes.js";
+import aiRoutes from "./routes/ai.routes.js";
 
   dotenv.config();
 

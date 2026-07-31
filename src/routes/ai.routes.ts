@@ -3,7 +3,7 @@ import {
   
   getCareerRecommendation,
   generateCoverLetter,
-} from "../controllers/ai.controller";
+} from "../controllers/ai.controller.js";
 
 const router = express.Router();
 

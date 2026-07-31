@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { ObjectId } from "mongodb";
-import client from "../config/db";
+import client from "../config/db.js";
 
 export const getCareers = async (
   req: Request,

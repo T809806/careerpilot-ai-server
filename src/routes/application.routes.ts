@@ -3,8 +3,8 @@ import {
   
   applyCareer,
   getMyApplications,
-} from "../controllers/application.controller";
-import { verifyToken } from "../middleware/verifyToken";
+} from "../controllers/application.controller.js";
+import { verifyToken } from "../middleware/verifyToken.js";
 
 const router = express.Router();
  router.post("/", verifyToken, applyCareer);

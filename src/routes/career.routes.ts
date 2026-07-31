@@ -6,9 +6,9 @@ import {
   addCareer,
   getMyCareers,
   deleteCareer,
-} from "../controllers/career.controller";
+} from "../controllers/career.controller.js";
 
-import { verifyToken } from "../middleware/verifyToken";
+import { verifyToken } from "../middleware/verifyToken.js";
 
 const router = express.Router();
 

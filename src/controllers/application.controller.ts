@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import client from "../config/db";
+import client from "../config/db.js";
 
 export const applyCareer = async (
   req: Request,
