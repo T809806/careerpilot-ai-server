@@ -19,6 +19,8 @@ app.use(
      "https://careerpilot-ai-client-five.vercel.app",
     ],
     credentials: true,
+     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+       allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
